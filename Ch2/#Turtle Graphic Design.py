@@ -1,0 +1,22 @@
+#Turtle Graphic Design
+import turtle
+turtle.hideturtle()
+turtle.setup(640, 480)
+turtle.bgcolor('gray')
+turtle.fillcolor('white')
+turtle.begin_fill()
+turtle.setheading(135)
+turtle.forward(100)
+turtle.right(90)
+turtle.forward(100)
+turtle.right(90)
+turtle.forward(200)
+turtle.left(90)
+turtle.forward(100)
+turtle.left(90)
+turtle.forward(100)
+turtle.left(90)
+turtle.forward(200)
+
+turtle.end_fill()
+turtle.getscreen()._root.mainloop()
