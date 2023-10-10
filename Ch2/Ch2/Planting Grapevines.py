@@ -17,5 +17,6 @@ Space_vines_S = (float(input('Enter the amount of space between the vines, in fe
 #Number of grapevines that can fit
 Number_Grapevines_Fit = (Length_R - (2 * Space_endpost_E)) / Space_vines_S
 
+Number_Grapevines_Fit = int(Number_Grapevines_Fit)
 #User display
 print('The number of grapevines that will fit in the row are', Number_Grapevines_Fit, 'grapevines.')
