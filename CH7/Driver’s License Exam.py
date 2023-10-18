@@ -49,7 +49,7 @@ def main():
    print('These are the student answers: ', My_Answers)
    if count_correct < 15:
       print("You have failed the test, you got", count_correct, "right and you got", count_wrong, "wrong")
-   if count_correct >= 20:
+   if count_correct >= 15:
       print("You have passed the test, you got", count_correct, "right and you got", count_wrong, "wrong")
    if count_correct == 20:
       print('You have no wrong answers. Good Job')
