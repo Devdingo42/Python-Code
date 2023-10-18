@@ -9,7 +9,10 @@
 #The number of hot dogs that will be left over
 #The number of hot dog buns that will be left over
 
+
+
 #Set Values
+import math
 hotdogs = 10
 buns =8
 
@@ -24,9 +27,9 @@ number_of_hotdogs =  number_hot_dogs_given * attendance
 print()
 
 if number_of_hotdogs > 0:
-    print('The minimum amount of hot dog packages required is', round((number_of_hotdogs + 4) / hotdogs), 'packages')
+    print('The minimum amount of hot dog packages required is', math.ceil((number_of_hotdogs) / hotdogs), 'packages')
 if number_of_hotdogs > 0:
-    print('The minimum amount of hot dog bun packages required is', round(number_of_hotdogs + 4) // buns, 'packages')
+    print('The minimum amount of hot dog bun packages required is', math.ceil(number_of_hotdogs + 4) // buns, 'packages')
 
 print('The amount of leftover hotdogs are', number_of_hotdogs % hotdogs, 'hotdogs')
 

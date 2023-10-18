@@ -18,12 +18,14 @@ Answers = ['A', 'C', 'A', 'A', 'D', 'B', 'C', 'A', 'C', 'B',
               'A', 'D', 'C', 'A', 'D', 'C', 'B', 'B', 'D', 'A']
 
 def main():
-   My_Answers = ['A', 'C', 'A', 'A', 'D', 'B', 'C', 'A', 'C', 'B',
-              'A', 'D', 'C', 'A', 'D', 'C', 'B', 'B', 'D', 'A']
+   My_Answers = []
+   for x in range(20):
+      Problem = input('Please enter the correct letter "A", "B", "C","D": ')
+      My_Answers.append(Problem)
    outfile = open('My_Answerslist.txt', 'w')
 
    for item in My_Answers:
-     outfile.write((item) + ' ')
+     outfile.write(item + '\n')
     
    outfile.close()
 main()
@@ -34,13 +36,24 @@ def main():
    My_Answers = infile.readlines()
    infile.close()
    index = 0
+   count_correct = 0
+   count_wrong = 0
    while index < len(My_Answers):
-      My_Answers[index] = (My_Answers[index])
+      My_Answers[index] = My_Answers[index].rstrip('\n')
+      if My_Answers[index] == Answers[index]:
+         count_correct += 1
+      if My_Answers[index] != Answers[index]:
+         count_wrong += 1
       index += 1
-   print('These are the student answers: ', My_Answers)
-   print('Congratulations you got 20/20. You pass!!')
-   print('You have no wrong answers. Good Job')
-   print('Good job, we dont even have to go over the ones you got wrong, since you got them all right.')
-   print()
-main()
 
+   print('These are the student answers: ', My_Answers)
+   if count_correct < 15:
+      print("You have failed the test, you got", count_correct, "right and you got", count_wrong, "wrong")
+   if count_correct >= 20:
+      print("You have passed the test, you got", count_correct, "right and you got", count_wrong, "wrong")
+   if count_correct == 20:
+      print('You have no wrong answers. Good Job')
+      print('Good job, we dont even have to go over the ones you got wrong, since you got them all right.')
+   print()
+
+main()
