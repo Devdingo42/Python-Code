@@ -45,7 +45,7 @@ def main():
             print('Correct')
         else:
             incorrect += 1
-            print('Incorrect')
+            print('Incorrect, the answer of', state, 'is', capital)
         
 
     print('You have',correct,'correct answers')
