@@ -76,7 +76,7 @@ def main():
     if p1 > p2:
         print('Congratulations Player 1, you won the Trivia!!!')
         print('Sorry Player 2, try to get more next time.')
-    if p2 > p1:
+    elif p2 > p1:
         print('Congratulations Player 2, you won the Trivia!!!')
         print('Sorry Player 1, try to get more next time.')
     else:
