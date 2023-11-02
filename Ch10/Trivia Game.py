@@ -13,18 +13,32 @@
 # and I have not provided this code to any other student.
 
 class Question:
-    def __init__(self, trivia, answer):
+    def __init__(self, trivia, answer1, answer2, answer3, answer4):
         self.__trivia = trivia
-        self.__answer = answer
+        self.__answer1 = answer1
+        self.__answer2 = answer2
+        self.__answer3 = answer3
+        self.__answer4 = answer4
     def set_trivia(self, trivia):
         self.__trivia = trivia
-    def set_answer(self, answer):
-        self.__answer = answer
+    def set_answer1(self, answer1):
+        self.__answer1 = answer1
+    def set_answer2(self, answer2):
+        self.__answer2 = answer2
+    def set_answer3(self, answer3):
+        self.__answer3 = answer3
+    def set_answer4(self, answer4):
+        self.__answer4 = answer4
     def get_trivia(self):
         return self.__trivia
-    def get_answer(self):
-        return self.__answer
-    
+    def get_answer1(self):
+        return self.__answer1
+    def get_answer2(self):
+        return self.__answer2
+    def get_answer3(self):
+        return self.__answer3
+    def get_answer4(self):
+        return self.__answer4
 def main():
     questions = {'What is the Capital of United States of america?, a) Georgia, b) Hawaii, c) Washing D.C., d) California':'c', 
                  'What year was the first iphone made?, a) 1983, b) 2000, c) 2020, d) 2007':'d', 
@@ -44,31 +58,37 @@ def main():
         print()
         print(key)
         answer1 = input('Player 1, Please enter the correct letter: ')
-        game = Question(key, answer1)
+        answer2 = answer1
+        answer3 = answer2
+        answer4 = answer3
+        game = Question(key, answer1, answer2, answer3, answer4)
         print()
         if answer1 == questions[key]:
-            print('Correct,', game.get_answer(), ', is the right choice')
+            print('Correct,', game.get_answer1(), ', is the right choice')
             p1 += 1
         else:
-            print('Incorrect,',  game.get_answer(), ', is the wrong choice')
+            print('Incorrect,',  game.get_answer2(), ', is the wrong choice')
             p1 += 0
         print('The guestion was,', game.get_trivia())
-        print('You have answered', game.get_answer())
+        print('You have answered', game.get_answer3())
 
     for key in question[5:]:
         print()
         print(key)
         answer1 = input('Player 2, Please enter the correct letter: ')
-        game = Question(key, answer1)
+        answer2 = answer1
+        answer3 = answer2
+        answer4 = answer3
+        game = Question(key, answer1, answer2, answer3, answer4)
         print()
         if answer1 == questions[key]:
-            print('Correct,', game.get_answer(), ', is the right choice')
+            print('Correct,', game.get_answer4(), ', is the right choice')
             p2 += 1
         else:
-            print('Incorrect,',  game.get_answer(), ', is the wrong choice')
+            print('Incorrect,',  game.get_answer1(), ', is the wrong choice')
             p2 += 0
         print('The guestion was,', game.get_trivia())
-        print('You have answered', game.get_answer())
+        print('You have answered', game.get_answer2())
     
     print()
     print('Player 1 scored,', p1, 'points')
