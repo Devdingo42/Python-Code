@@ -30,23 +30,29 @@ def main():
                 'Virginia':'Richmond', 'Washington':'Olympia', 'West Virginia':'Charleston', 'Wisconsin':'Madison', 'Wyoming':'Cheyenne'}
     
     length = len(States)
+    state_list = list(States)
 
     correct = 0
     incorrect = 0
 
     for count in range(length):
         print()
-        state, capital = States.popitem()
-        print(state)
+        state = (random.choice(state_list))
+       # state, capital = random.choice(state)
+        print((state))
         ans = input('Enter the capital of this state: ')
         print()
-        if (ans == capital):
+        if (ans == States[state]):
             correct += 1
             print('Correct')
+            state = state_list.remove(state)
+
         else:
             incorrect += 1
-            print('Incorrect, the answer of', state, 'is', capital)
-        
+
+            print('Incorrect, the answer of', state, 'is', States[state])
+            state = state_list.remove(state)
+
 
     print('You have',correct,'correct answers')
     print('You have',incorrect,'incorrect answers')
